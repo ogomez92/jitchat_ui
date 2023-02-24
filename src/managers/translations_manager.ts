@@ -1,4 +1,4 @@
-import VueI18n from 'vue-i18n'
+import { createI18n } from 'vue-i18n';
 import messages from '@src/assets/translations.json';
 
 export default class TranslationsManager {
@@ -10,8 +10,8 @@ export default class TranslationsManager {
     this.locale = locale;
   }
 
-  public getVuePlugin = () => VueI18n.createI18n({
-    legacy: false, // you must set `false`, to use Composition API
+  public getVuePlugin = () => createI18n({
+    legacy: false,
     locale: this.locale, // set locale
     fallbackLocale: 'en', // set fallback locale
     messages,

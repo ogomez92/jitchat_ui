@@ -1,15 +1,43 @@
 <script setup lang="ts">
-// Define an announce prop bool with a default
-defineProps({
-  srAnnounce: {
-    type: Boolean,
-    required: false,
-    default: true,
-  }
-})
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n({ useScope: 'global' })
 </script>
 
 <template>
-  <p> hello </p>
-</template>
+  <div id="disclaimerTitleContainer" class="text-4xl font-bold mb-4">
+    <h1 role="alert"> {{ t('disclaimerTitle') }}</h1>
+  </div>
 
+  <div id="disclaimerTextContainer" class="text-lg leading-7 mb-4">
+    <p> {{ t('disclaimerParagraph1') }}</p>
+    <p> {{ t('disclaimerParagraph2') }}</p>
+    <ul class="ml-4 mb-4 list-inside">
+      <li class="ml-2 mb-2"> {{ t('disclaimerListItem1') }}</li>
+      <li class="ml-2 mb-2"> {{ t('disclaimerListItem2') }}</li>
+      <li class="ml-2 mb-2"> {{ t('disclaimerListItem3') }}</li>
+      <li class="ml-2 mb-2"> {{ t('disclaimerListItem4') }}</li>
+    </ul>
+    <p > {{ t('disclaimerParagraph3') }}</p>
+  </div>
+</template>
+<style scoped>
+#disclaimerTitleContainer h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+#disclaimerTextContainer p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+#disclaimerTextContainer ul {
+  list-style: disc;
+  margin-left: 1.5rem;
+}
+
+#disclaimerTextContainer li {
+  margin-left: 1.5rem;
+}
+</style>

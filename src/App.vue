@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import DisclaimerView from './components/Disclaimer.vue'
+import DisclaimerView from './components/DisclaimerView.vue'
 </script>
 
 <template>
-  <DisclaimerView />
+  <DisclaimerView :sr-announce="false" />
 </template>
