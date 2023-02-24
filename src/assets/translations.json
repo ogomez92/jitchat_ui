@@ -7,7 +7,8 @@
     "disclaimerListItem2": "We do not recommend that you use JitChat if you are under 16 years of age. However, if you choose to use our platform, it is your responsibility to filter out any unwanted/unsolicited behaviour from other users.",
     "disclaimerListItem3": "JitChat is not responsible for other users using a name that you previously used on the platform. We do not guarantee the uniqueness of usernames on this site.",
     "disclaimerListItem4": "JitChat does not collect any user data. we do not ask for an email address nor a real name nor do we collect your IP. We obtain your previously used name and intro by assigning a random string of characters as your ID and saving it to your computer's disk. Clearing out your local storage will reset your user ID.",
-    "disclaimerParagraph3": "By using JitChat, you acknowledge and agree to these terms. We reserve the right to update this disclaimer at any time. If you have any questions or concerns, please contact Oriol Gómez."
+    "disclaimerParagraph3": "By using JitChat, you acknowledge and agree to these terms. We reserve the right to update this disclaimer at any time. If you have any questions or concerns, please contact Oriol Gómez.",
+    "disclaimerContinueButton": "Continue to JitChat"
   },
   "es": {
     "disclaimerTitle": "¡Lo primero es lo primero! Lee la siguiente información para continuar a JitChat",
@@ -17,6 +18,7 @@
     "disclaimerListItem2": "Si tienes menos de 16 años, no te recomendamos que utilices JitChat. Sin embargo, si decides utilizar nuestra plataforma, lo haces bajo tu propia responsabilidad.",
     "disclaimerListItem3": "JitChat no se hace responsable de que otros usuarios utilicen un nombre que hayas usado previamente en la plataforma. No garantizamos la unicidad de los nombres de usuario en esta web.",
     "disclaimerListItem4": "JitChat no recopila ningún dato de los usuarios. No pedimos una dirección de correo electrónico ni un nombre real ni recopilamos tu IP. Obtenemos tu nombre e intro utilizados anteriormente asignando una cadena aleatoria de caracteres como tu ID y guardándola en el disco de tu ordenador. Si borras tu almacenamiento local, se restablecerá tu ID de usuario.",
-    "disclaimerParagraph3": "Al utilizar JitChat, asumimos que estás de acuerdo con estos términos. Nos reservamos el derecho a actualizar este aviso legal en cualquier momento. Si tienes alguna pregunta o duda, ponte en contacto con Oriol Gómez."
+    "disclaimerParagraph3": "Al utilizar JitChat, asumimos que estás de acuerdo con estos términos. Nos reservamos el derecho a actualizar este aviso legal en cualquier momento. Si tienes alguna pregunta o duda, ponte en contacto con Oriol Gómez.",
+    "disclaimerContinueButton": "Continuar a JitChat"
   }
 }

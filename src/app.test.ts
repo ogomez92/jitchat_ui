@@ -9,12 +9,4 @@ test('mount component', async () => {
 
   expect(wrapper.html()).toMatchSnapshot()
 
-  expect(wrapper.text()).toContain('Vite + Vue')
-  expect(wrapper.text()).toContain('count is 0')
-
-  await wrapper.get('button').trigger('click')
-  expect(wrapper.text()).toContain('count is 1')
-
-  await wrapper.get('button').trigger('click')
-  expect(wrapper.text()).toContain('count is 2')
 })

@@ -1,7 +1,17 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import StorageService from '@src/services/storage_service';
+import StorageKey from '@src/enums/storage_key';
+import StateManager from '@src/managers/state_manager';
 
 const { t } = useI18n({ useScope: 'global' })
+
+const hideDisclaimer = () => {
+  StorageService.setKey(StorageKey.DISCLAIMER_SHOW_DATE, new Date().getTime().toString())
+  console.log('hiding');
+  // SEt the reactive property in state manager
+  StateManager.disclaimerShouldShow = false;
+}
 </script>
 
 <template>
@@ -18,8 +28,15 @@ const { t } = useI18n({ useScope: 'global' })
       <li class="ml-2 mb-2"> {{ t('disclaimerListItem3') }}</li>
       <li class="ml-2 mb-2"> {{ t('disclaimerListItem4') }}</li>
     </ul>
-    <p > {{ t('disclaimerParagraph3') }}</p>
+    <p> {{ t('disclaimerParagraph3') }}</p>
   </div>
+  <button
+  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+  @click="hideDisclaimer()"
+  >
+  {{  t('disclaimerContinueButton') }}
+</button>
+
 </template>
 <style scoped>
 #disclaimerTitleContainer h1 {
