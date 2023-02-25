@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {},
+	"extensions": {
+		"recommendations": ["Vue.volar", "Vue.vscode-typescript-vue-plugin"]
+	}
+}
