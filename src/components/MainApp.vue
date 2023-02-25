@@ -1,11 +1,19 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
-import StorageService from '@src/services/storage_service';
-import StorageKey from '@src/enums/storage_key';
+import { ref } from 'vue';
 import JitChatHeader from '@src/components/JitChatHeader.vue';
+import UserEntryForm from '@src/components/UserEntryForm.vue';
 
-const { t } = useI18n({ useScope: 'global' })
+const userEntryFormShouldShow = ref(true);
+
+const submitUserEntryForm = (data: string) => {
+  console.log(data);
+  userEntryFormShouldShow.value = false;
+}
 </script>
 <template>
   <JitChatHeader />
+  <UserEntryForm
+  v-if="userEntryFormShouldShow"
+  @submit="submitUserEntryForm"
+  />
 </template>
