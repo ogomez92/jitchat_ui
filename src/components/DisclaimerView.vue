@@ -8,8 +8,6 @@ const { t } = useI18n({ useScope: 'global' })
 
 const hideDisclaimer = () => {
   StorageService.setKey(StorageKey.DISCLAIMER_SHOW_DATE, new Date().getTime().toString())
-  console.log('hiding');
-  // SEt the reactive property in state manager
   StateManager.disclaimerShouldShow = false;
 }
 </script>
