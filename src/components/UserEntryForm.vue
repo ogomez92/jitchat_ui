@@ -32,7 +32,8 @@ const submitForm = async () => {
 
     let user: User = {
         username: nameField.value,
-        intro: introField.value
+        intro: introField.value,
+        id: userFromServer.value?.id || null,
     }
 }
 

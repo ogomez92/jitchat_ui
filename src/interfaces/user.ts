@@ -1,11 +1,9 @@
-import Language from '../enums/language';
 import UserStatus from '../enums/user_status';
 
 export default interface User {
-    id: string;
+    id: string | null;
     username: string;
     intro: string;
-    languages: Language[];
-    status: UserStatus;
+    status?: UserStatus;
   }
   

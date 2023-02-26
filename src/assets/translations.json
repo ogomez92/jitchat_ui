@@ -1,7 +1,5 @@
 {
   "en": {
-    "userFormNameError": "Please enter a valid name.",
-    "userFormIntroError": "Please enter a valid introduction.",
     "disclaimerTitle": "First things first! Read the following disclaimer to continue to JitChat.",
     "disclaimerParagraph1": "Welcome to JitChat, a platform where you can chat with other users from around the world.",
     "disclaimerParagraph2": "Please be aware of the following:",
@@ -15,7 +13,10 @@
     "userFormIntro": "Tell us something about you, where are you from? What languages do you speak?  (minimum 50 characters, maximum 1000):",
     "userFormLanguages": "Select your preferred languages",
     "userFormEnter": "Submit",
-    "userFormDataFound": "I have recovered your old user data from the server, in case you want to use it again."
+    "userFormDataFound": "I have recovered your old user data from the server, in case you want to use it again.",
+    "userFormNameError": "Please enter a valid name. It must contain from 5 to 50 characters and no emails or URLs.",
+    "userFormIntroError": "Please enter a valid introduction. It must contain 50 to 1000 characters and no emails or web addresses are allowed"
+
   },
   "es": {
     "disclaimerTitle": "¡Lo primero es lo primero! Lee la siguiente información para continuar a JitChat",
@@ -32,7 +33,7 @@
     "userFormLanguages": "Selecciona los idiomas que hablas:",
     "userFormEnter": "Entrar",
     "userFormDataFound": "Hemos recuperado tu antiguo usuario del servidor, te lo dejo aquí por si lo quieres usar.",
-    "userFormNameError": "Por favor introduce un nombre válido.",
-    "userFormIntroError": "Por favor introduce una intro válida"
+    "userFormNameError": "Por favor introduce un nombre válido Debe contener de 5 a 50 caracteres, sin URLs ni direcciones de correo.",
+    "userFormIntroError": "Por favor introduce una intro válida. Debe contener de 50 a 1000 caracteres, sin direcciones de correo ni URLs."
   }
 }
