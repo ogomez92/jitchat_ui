@@ -28,7 +28,7 @@ export default class UserService {
 
   public static findUserDataFromServer = async (userID: string): Promise<User | null> => {
     const response = await JitchatAPIService.getRequestWithParams(
-      '/retrieveuser',
+      'retrieveuser',
       new URLSearchParams({
         id: userID,
       })
@@ -41,5 +41,12 @@ export default class UserService {
     const user: User = await response.json()
 
     return user
+  }
+
+  public static addUserToServer = async(user: User): Promise<any> => {
+    const response = await JitchatAPIService.postRequestWithJson('newuser', user)
+    console.log(response);
+
+    return response.body;
   }
 }

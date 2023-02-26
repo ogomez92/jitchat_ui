@@ -4,6 +4,7 @@ import { useI18n } from 'vue-i18n'
 import User from '@src/interfaces/user';
 import UserService from '@src/services/user_service';
 import InputValidator from '@src/helpers/input_validator'
+import StateManager from '@src/managers/state_manager'
 
 const { t } = useI18n({ useScope: 'global' })
 const userFromServer: Ref<User | null> = ref(null);
@@ -34,6 +35,14 @@ const submitForm = async () => {
         username: nameField.value,
         intro: introField.value,
         id: userFromServer.value?.id || null,
+    }
+
+    try {
+    const addedUser = await UserService.addUserToServer(user);
+
+    StateManager.currentUser = addedUser;
+    } catch(error) {
+        console.error(`There was an error adding the user to the server: ${error}`)
     }
 }
 

@@ -1,6 +1,13 @@
 import { reactive } from 'vue';
-// Make it reactive
+import User from '@src/interfaces/user';
 
-export default reactive({
+interface StateManager {
+disclaimerShouldShow: boolean;
+currentUser: User | null,
+
+}
+
+export default reactive<StateManager>({
 disclaimerShouldShow: false,
+
 })
