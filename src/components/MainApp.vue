@@ -2,13 +2,18 @@
 import { ref } from 'vue';
 import JitChatHeader from '@src/components/JitChatHeader.vue';
 import UserEntryForm from '@src/components/UserEntryForm.vue';
-import StateManager from '@src/managers/state_manager';
+import User from '@src/interfaces/user';
 
 const userEntryFormShouldShow = ref(true);
+
+const handleUserSet = (addedUser: User) => {
+console.log(addedUser);
+}
 </script>
 <template>
   <JitChatHeader />
   <UserEntryForm
-  v-if="!StateManager.currentUser"
+  v-if="userEntryFormShouldShow"
+  @user-set-success="handleUserSet"
   />
 </template>

@@ -14,7 +14,7 @@ export default class JitchatAPIService {
       body: JSON.stringify(params),
     })
 
-    return response.json();
+    return response;
   }
 
   public static getRequestWithParams = async (

@@ -11,8 +11,6 @@ export default class UserService {
       return null;
     }
 
-    console.log(`We have the id ${storedUserID} requesting API for user`)
-
     try {
       const user: User | null = await UserService.findUserDataFromServer(
         storedUserID
@@ -43,10 +41,19 @@ export default class UserService {
     return user
   }
 
-  public static addUserToServer = async(user: User): Promise<any> => {
+  public static addUserToServer = async (user: User): Promise<User> => {
     const response = await JitchatAPIService.postRequestWithJson('newuser', user)
-    console.log(response);
 
-    return response.body;
+    const userInServer: User = await response.json();
+
+    if (!userInServer.id) {
+      throw new Error(`The user returned by the server was invalid: ${userInServer}`)
+    }
+
+    if (userInServer.id) {
+      StorageService.setKey(StorageKey.USER_ID, userInServer.id)
+    }
+
+    return userInServer;
   }
 }
