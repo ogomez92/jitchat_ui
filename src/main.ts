@@ -3,7 +3,7 @@ import './style.css'
 import App from './App.vue'
 import TranslationsManager from '@src/managers/translations_manager'
 
-const translationsManager = new TranslationsManager('es');
+const translationsManager = new TranslationsManager(navigator.language);
 
 createApp(App)
 .use(translationsManager.getVuePlugin())
