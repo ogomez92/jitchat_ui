@@ -13,38 +13,44 @@ const hideDisclaimer = () => {
 </script>
 
 <template>
-  <div id="disclaimerTitleContainer" class="text-4xl font-bold mb-4">
-    <h1 role="alert"> {{ t('disclaimerTitle') }}</h1>
-  </div>
+  <div id="disclaimerContainer">
+    <div id="disclaimerTitleContainer" class="text-3xl font-bold mb-4">
+      <h1 role="alert"> {{ t('disclaimerTitle') }}</h1>
+    </div>
 
-  <div id="disclaimerTextContainer" class="text-lg leading-7 mb-4">
-    <p> {{ t('disclaimerParagraph1') }}</p>
-    <p> {{ t('disclaimerParagraph2') }}</p>
-    <ul class="ml-4 mb-4 list-inside">
-      <li class="ml-2 mb-2"> {{ t('disclaimerListItem1') }}</li>
-      <li class="ml-2 mb-2"> {{ t('disclaimerListItem2') }}</li>
-      <li class="ml-2 mb-2"> {{ t('disclaimerListItem3') }}</li>
-      <li class="ml-2 mb-2"> {{ t('disclaimerListItem4') }}</li>
-    </ul>
-    <p> {{ t('disclaimerParagraph3') }}</p>
+    <div id="disclaimerTextContainer" class="leading-7 mb-4">
+      <p style="font-size: 1.2rem;"> {{ t('disclaimerParagraph1') }}</p>
+      <p style="font-size: 1.2rem;"> {{ t('disclaimerParagraph2') }}</p>
+      <ul class="ml-4 mb-4 list-inside">
+        <li class="ml-2 mb-2"> {{ t('disclaimerListItem1') }}</li>
+        <li class="ml-2 mb-2"> {{ t('disclaimerListItem2') }}</li>
+        <li class="ml-2 mb-2"> {{ t('disclaimerListItem3') }}</li>
+        <li class="ml-2 mb-2"> {{ t('disclaimerListItem4') }}</li>
+      </ul>
+      <p style="font-size: 1.2rem;"> {{ t('disclaimerParagraph3') }}</p>
+    </div>
+    <button
+      id="disclaimerContinueButton"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded"
+      style="margin-top: 1rem;"
+      @click="hideDisclaimer()"
+    >
+      {{  t('disclaimerContinueButton') }}
+    </button>
   </div>
-  <button
-  id="disclaimerContinueButton"
-  class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-  @click="hideDisclaimer()"
-  >
-  {{  t('disclaimerContinueButton') }}
-</button>
-
 </template>
+
 <style scoped>
+#disclaimerContainer {
+  margin: 0 1rem;
+}
+
 #disclaimerTitleContainer h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
 #disclaimerTextContainer p {
-  font-size: 1rem;
   margin-bottom: 1rem;
 }
 
