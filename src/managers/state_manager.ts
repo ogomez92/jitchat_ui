@@ -1,12 +1,11 @@
 import { reactive } from 'vue';
-import EventManager from '@src/managers/event_manager'
 
 interface StateManager {
     disclaimerShouldShow: boolean;
-    eventManager: EventManager | null;
+    errorMessage: string | null;
 }
 
 export default reactive<StateManager>({
     disclaimerShouldShow: false,
-    eventManager: null,
+    errorMessage: null,
 })

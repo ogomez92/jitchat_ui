@@ -1,5 +1,6 @@
 {
   "en": {
+    "waitingRoomRegistrationError": "There was an error entering the waiting room. Please refresh the page. Error Code: ",
     "disclaimerTitle": "First things first! Read the following disclaimer to continue to JitChat.",
     "disclaimerParagraph1": "Welcome to JitChat, a platform where you can chat with other users from around the world.",
     "disclaimerParagraph2": "Please be aware of the following:",
@@ -34,6 +35,7 @@
     "userFormEnter": "Entrar",
     "userFormDataFound": "Hemos recuperado tu antiguo usuario del servidor, te lo dejo aquí por si lo quieres usar.",
     "userFormNameError": "Por favor introduce un nombre válido Debe contener de 5 a 50 caracteres, sin URLs ni direcciones de correo.",
-    "userFormIntroError": "Por favor introduce una intro válida. Debe contener de 50 a 1000 caracteres, sin direcciones de correo ni URLs."
+    "userFormIntroError": "Por favor introduce una intro válida. Debe contener de 50 a 1000 caracteres, sin direcciones de correo ni URLs.",
+    "waitingRoomRegistrationError": "Ha ocurrido un problema al entrar en la sala de espera. Por favor actualiza la página. Código de error: "
   }
 }
