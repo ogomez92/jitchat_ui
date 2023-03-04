@@ -3,6 +3,7 @@ import StorageKey from '@src/enums/storage_key'
 import User from '@src/interfaces/user'
 import JitchatAPIService from '@src/services/jitchat_api_service'
 
+
 export default class UserService {
   public static getExistingUser = async (): Promise<User | null> => {
     const storedUserID = StorageService.getKey(StorageKey.USER_ID)

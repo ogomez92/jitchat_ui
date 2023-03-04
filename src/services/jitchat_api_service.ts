@@ -1,3 +1,5 @@
+import User from '@src/interfaces/user';
+
 const ENDPOINT = import.meta.env.VITE_API_ENDPOINT
 
 export default class JitchatAPIService {
@@ -22,9 +24,11 @@ export default class JitchatAPIService {
     params: URLSearchParams
   ): Promise<Response> => {
     const url = `${ENDPOINT}/${route}?${params.toString()}`
-    
+
     const response = await fetch(url, { method: 'GET' })
-  
+
     return response
   }
-  }
+
+  public static getEventSource = (forUser: User): EventSource => new EventSource(`${ENDPOINT}/events/${forUser.id}`);
+}

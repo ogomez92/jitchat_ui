@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineEmits, ref, Ref, onMounted } from 'vue';
+import { ref, Ref, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n'
 import User from '@src/interfaces/user';
 import UserService from '@src/services/user_service';
