@@ -24,5 +24,8 @@ const handleUserSet = (addedUser: User) => {
 <template>
   <JitChatHeader />
   <UserEntryForm v-if="userEntryFormShouldShow" @user-set-success="handleUserSet" />
-  <WaitingRoom v-if="waitingRoomShouldShow"/>
+  <WaitingRoom
+   v-if="waitingRoomShouldShow"
+  :user-id="userID"
+  />
 </template>
