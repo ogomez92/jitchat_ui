@@ -1,5 +1,7 @@
 {
   "en": {
+    "waitingForInvitations": "We are waiting for someone for you to talk to. We will show you their name and introduction, and you can decide whether you want to talk to that person or not. You can press escape at any time to exit.",
+    "cancelButton": "Cancel",
     "waitingRoomRegistrationError": "There was an error entering the waiting room. Please refresh the page. Error Code: ",
     "disclaimerTitle": "First things first! Read the following disclaimer to continue to JitChat.",
     "disclaimerParagraph1": "Welcome to JitChat, a platform where you can chat with other users from around the world.",
@@ -36,6 +38,8 @@
     "userFormDataFound": "Hemos recuperado tu antiguo usuario del servidor, te lo dejo aquí por si lo quieres usar.",
     "userFormNameError": "Por favor introduce un nombre válido Debe contener de 5 a 50 caracteres, sin URLs ni direcciones de correo.",
     "userFormIntroError": "Por favor introduce una intro válida. Debe contener de 50 a 1000 caracteres, sin direcciones de correo ni URLs.",
-    "waitingRoomRegistrationError": "Ha ocurrido un problema al entrar en la sala de espera. Por favor actualiza la página. Código de error: "
+    "waitingRoomRegistrationError": "Ha ocurrido un problema al entrar en la sala de espera. Por favor actualiza la página. Código de error: ",
+    "cancelButton": "Cancelar",
+    "waitingForInvitations": "Estamos esperando a que alguien esté disponible para hablar. te mostraremos su nombre e introducción y podrás decidir si quieres hablar con esa persona o no. puedes pulsar escape en cualquier momento para salir."
   }
 }

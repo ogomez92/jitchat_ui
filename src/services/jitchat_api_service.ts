@@ -1,5 +1,3 @@
-import User from '@src/interfaces/user';
-
 const ENDPOINT = import.meta.env.VITE_API_ENDPOINT
 
 export default class JitchatAPIService {
@@ -30,5 +28,5 @@ export default class JitchatAPIService {
     return response
   }
 
-  public static getEventSource = (forUser: User): EventSource => new EventSource(`${ENDPOINT}/events/${forUser.id}`);
+  public static getEventSource = (forUserID: string): EventSource => new EventSource(`${ENDPOINT}/events/${forUserID}`);
 }
