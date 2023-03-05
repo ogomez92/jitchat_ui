@@ -8,6 +8,8 @@ import InvitationCard from '@src/components/InvitationCard.vue';
 import { useI18n } from 'vue-i18n'
 import Invitation      from '@src/interfaces/invitation';
 import User from '@src/interfaces/user';
+import playSound from '@src/helpers/sound_player';
+import InvitationExpiredSound from '@src/assets/invitation_expired.mp3';
 
 const { t } = useI18n({ useScope: 'global' })
 
@@ -27,18 +29,20 @@ const props = defineProps({
 onMounted(async () => {
   eventManager = new EventManager(props.userId);
   eventManager.setInvitationReceivedCallback((invitation) => {
-    const theOtherUSer = invitation.users.find((user) => user.id !== props.userId);
 
-    if (!theOtherUSer) {
+    const theOtherUser = invitation.users.find((user) => user.id !== props.userId);
+
+    if (!theOtherUser) {
       state_manager.errorMessage = `Received invitation with the wrong format, can't find user: ${receivedInvitation.value}`
       return;
     }
-    otherUser.value = theOtherUSer;
+    otherUser.value = theOtherUser;
     receivedInvitation.value = invitation
   })
 
   eventManager.setInvitationExpiredCallback(() => {
-    console.log('expired')
+    playSound(InvitationExpiredSound);
+
     otherUser.value = null;
     receivedInvitation.value = null;
   })

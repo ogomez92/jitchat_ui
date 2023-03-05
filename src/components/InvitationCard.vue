@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n'
+import playSound from '@src/helpers/sound_player';
+import IncomingInvitationSound from '@src/assets/invitation.mp3';
+
+
 const emits = defineEmits(['accept', 'decline']);
 
 const { t } = useI18n({ useScope: 'global' })
@@ -24,6 +28,7 @@ ${t('invitationCardExplanation')}
 `
 
 onMounted(() => {
+    playSound(IncomingInvitationSound);
     invitationTextarea.value.focus();
     invitationTextarea.value.setSelectionRange(0, 0);
 })
