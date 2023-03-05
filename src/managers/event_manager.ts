@@ -7,6 +7,7 @@ import EventType from "@src/enums/event_type";
 export default class EventManager {
     private eventSource: EventSource | undefined;
     private invitationReceivedCallback: ((invitation: Invitation) => void) | undefined;
+    private invitationExpiredCallback: (() => void) | undefined;
     private userID: string;
 
     constructor(userID: string) {
@@ -17,9 +18,13 @@ export default class EventManager {
         this.invitationReceivedCallback = callback;
     }
 
+    public setInvitationExpiredCallback = (callback: () => void) => {
+        this.invitationExpiredCallback = callback;
+    }
+
     public acceptInvitations = () => {
-        if (!this.invitationReceivedCallback) {
-            throw new Error(`Cannot accept invitations with no callback specified`);
+        if (!this.invitationReceivedCallback || !this.invitationExpiredCallback) {
+            throw new Error(`Cannot accept invitations with unset callbacks`);
             return;
         }
 
@@ -27,7 +32,12 @@ export default class EventManager {
 
         this.eventSource.addEventListener(EventType.INVITATION, (event) => {
             if (event.data && this.invitationReceivedCallback) {
-                this.invitationReceivedCallback(event.data as Invitation);
+                this.invitationReceivedCallback(JSON.parse(event.data) as Invitation);
+            }
+        });
+        this.eventSource.addEventListener(EventType.INVITATION_EXPIRED, () => {
+            if (this.invitationExpiredCallback) {
+                this.invitationExpiredCallback();
             }
         });
 
