@@ -29,4 +29,20 @@ export default class JitchatAPIService {
   }
 
   public static getEventSource = (forUserID: string): EventSource => new EventSource(`${ENDPOINT}/events/${forUserID}`);
+
+  public static declineInvitation = (invitationID: string, userID: string) => {
+    const params = new URLSearchParams()
+    params.append('invitation', invitationID)
+    params.append('user', userID)
+
+    return JitchatAPIService.getRequestWithParams('decline', params)
+  }
+
+  public static acceptInvitation = (invitationID: string, userID: string) => {
+    const params = new URLSearchParams()
+    params.append('invitation', invitationID)
+    params.append('user', userID)
+
+    return JitchatAPIService.getRequestWithParams('accept', params)
+  }
 }

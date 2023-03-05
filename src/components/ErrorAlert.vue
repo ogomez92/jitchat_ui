@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import playSound from '@src/helpers/sound_player';
+import errorSound from '@src/assets/error.mp3';
+import { ref, onMounted } from 'vue';
+
   defineProps({
     errorMessage: {
       type: String,
@@ -6,6 +10,11 @@
     }
   });
 
+  const errorOKButton = ref();
+  onMounted(() => {
+    playSound(errorSound);
+    errorOKButton.value.focus();
+  })
   function reloadPage() {
     window.location.reload();
   }
@@ -14,7 +23,7 @@
   <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
     <strong class="font-bold">Error: </strong>
     <span class="block sm:inline">{{ errorMessage }}</span>
-    <button class="absolute top-0 bottom-0 right-0 px-4 py-3" @click="reloadPage">
+    <button ref="errorOKButton" class="absolute top-0 bottom-0 right-0 px-4 py-3" @click="reloadPage">
       OK
     </button>
   </div>
