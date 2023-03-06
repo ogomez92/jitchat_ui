@@ -10,11 +10,11 @@ import Invitation from '@src/interfaces/invitation';
 import User from '@src/interfaces/user';
 import playSound from '@src/helpers/sound_player';
 import InvitationExpiredSound from '@src/assets/invitation_expired.mp3';
-import invitationAcceptSound from '@src/assets/accept.mp3';
-
+import talkTimeSound from '@src/assets/connect.mp3';
 import JitchatAPIService from '@src/services/jitchat_api_service';
 
 const { t } = useI18n({ useScope: 'global' })
+const emits = defineEmits(['talk']);
 
 let eventManager: EventManager;
 
@@ -50,12 +50,18 @@ onMounted(async () => {
     waitingDialogMessage.value = t('waitingForInvitations');
   })
 
+  eventManager.setTalkTimeCallback((roomID: string) => {
+    playSound(talkTimeSound);
+    eventManager.close();
+    emits('talk', roomID);
+  })
+
+
   eventManager.acceptInvitations();
 });
 
 const acceptInvitation = () => {
   if (receivedInvitation.value) {
-    playSound(invitationAcceptSound);
     JitchatAPIService.acceptInvitation(receivedInvitation.value.id, props.userId);
   }
 

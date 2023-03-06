@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { Ref, ref } from 'vue';
 import JitChatHeader from '@src/components/JitChatHeader.vue';
 import UserEntryForm from '@src/components/UserEntryForm.vue';
 import User from '@src/interfaces/user';
@@ -8,6 +8,7 @@ import WaitingRoom from '@src/components/WaitingRoom.vue';
 const userEntryFormShouldShow = ref(true);
 const waitingRoomShouldShow = ref(false);
 const userID = ref('')
+const roomID: Ref<string | null> = ref(null);
 
 const handleUserSet = (addedUser: User) => {
   if (!addedUser.id) {
@@ -20,6 +21,11 @@ const handleUserSet = (addedUser: User) => {
   userEntryFormShouldShow.value = false;
   waitingRoomShouldShow.value = true;
 }
+
+const connectToRoom = (room: string) => {
+  waitingRoomShouldShow.value = true;
+  roomID.value = room;
+}
 </script>
 <template>
   <JitChatHeader />
@@ -27,5 +33,6 @@ const handleUserSet = (addedUser: User) => {
   <WaitingRoom
    v-if="waitingRoomShouldShow"
   :user-id="userID"
+  @talk="connectToRoom"
   />
 </template>
