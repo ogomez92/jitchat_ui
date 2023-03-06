@@ -13,6 +13,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/jitsi-meet": "^2.0.2",
+    "@vueuse/core": "^9.13.0",
     "vue": "^3.2.45",
     "vue-i18n": "^9.2.2"
   },

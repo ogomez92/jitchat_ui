@@ -8,6 +8,10 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
   },
+  rollupOptions: {
+    external: ['!window'],
+  },
+
   optimizeDeps: {
     exclude: ['events'],
   },

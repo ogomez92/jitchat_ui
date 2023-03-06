@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ErrorAlert from '@src/components/ErrorAlert.vue'
 import state_manager from '@src/managers/state_manager';
-import { ref, Ref, onMounted } from 'vue';
+import { ref, Ref, onMounted, onBeforeUnmount } from 'vue';
 import EventManager from '@src/managers/event_manager';
 import WaitingDialog from '@src/components/WaitingDialog.vue';
 import InvitationCard from '@src/components/InvitationCard.vue';
@@ -52,13 +52,15 @@ onMounted(async () => {
 
   eventManager.setTalkTimeCallback((roomID: string) => {
     playSound(talkTimeSound);
-    eventManager.close();
     emits('talk', roomID);
   })
 
-
   eventManager.acceptInvitations();
 });
+
+onBeforeUnmount(() => {
+  eventManager.close();
+})
 
 const acceptInvitation = () => {
   if (receivedInvitation.value) {
