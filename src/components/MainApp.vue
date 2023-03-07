@@ -5,7 +5,7 @@ import UserEntryForm from '@src/components/UserEntryForm.vue';
 import User from '@src/interfaces/user';
 import WaitingRoom from '@src/components/WaitingRoom.vue';
 import MeetingPoint from './MeetingPoint.vue';
-const debug = true;
+const debug = false;
 const userEntryFormShouldShow = ref(true);
 const waitingRoomShouldShow = ref(false);
 const userID = ref('')

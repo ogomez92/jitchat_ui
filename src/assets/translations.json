@@ -1,5 +1,6 @@
 {
   "en": {
+    "readyToTalk": "Chat conectado!",
     "waitingForOtherUser": "We are waiting for the other person to accept or decline, please stand by",
     "invitationCardTextareaLabel": "Your new friend",
     "invitationCardButtonYes": "Yes",
@@ -51,6 +52,7 @@
     "invitationCardButtonYes": "Sí",
     "invitationCardButtonNo": "No",
     "invitationCardTextareaLabel": "Tu nueva amistad",
-    "waitingForOtherUser": "Estamos esperando a la otra persona a que acepte o rechace, por favor espera..."
+    "waitingForOtherUser": "Estamos esperando a la otra persona a que acepte o rechace, por favor espera...",
+    "readyToTalk": "Chat connected!"
   }
 }
