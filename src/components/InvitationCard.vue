@@ -41,19 +41,15 @@ onMounted(() => {
                 <label class="block text-gray-700 font-bold mb-2" for="invitationCardTextarea">{{
                     t('invitationCardTextareaLabel') }}</label>
                 <textarea
-                id="invitationCardTextarea" ref="invitationTextarea" v-model="invitationText" class="w-full p-3 border rounded-md"
-                    :name="t('invitationCardTitleWithName')" rows="3" autofocus>
-                                            </textarea>
+                id="invitationCardTextarea" ref="invitationTextarea" v-model="invitationText"
+                    class="w-full p-3 border rounded-md" :name="t('invitationCardTitleWithName')" rows="3" autofocus>
+                                                    </textarea>
             </div>
             <div class="flex justify-center">
                 <button
-                type="button"
-                @click="emits('accept')"
-                >{{ t('invitationCardButtonYes') }}</button>
-                <button
-                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md mr-4"
-                type="button" @click="emits('decline')"
-                        > {{ t('invitationCardButtonNo') }}</button>
+                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md mr-4" type="button"
+                    @click="emits('accept')">{{ t('invitationCardButtonYes') }}</button>
+                <button type="button" @click="emits('decline')"> {{ t('invitationCardButtonNo') }}</button>
 
             </div>
         </form>

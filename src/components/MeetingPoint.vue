@@ -5,6 +5,7 @@ import Jitsi from 'jitsi-meet';
 import ErrorAlert from './ErrorAlert.vue';
 import { useI18n } from 'vue-i18n'
 import playSound from '@src/helpers/sound_player';
+import connectedParticipantSound from '@src/assets/connected_participant.mp3';
 import connectedSound from '@src/assets/connected.mp3';
 import doorSlam from '@src/assets/doorslam.mp3';
 
@@ -34,12 +35,6 @@ const props = defineProps({
 
 const registerEvents = () => {
     jitsiAPI.addListener('readyToClose', () => {
-        playSound(doorSlam);
-        setTimeout(() => window.location.reload(), 1500);
-    });
-
-    jitsiAPI.addListener('videoConferenceLeft', () => {
-        playSound(doorSlam);
         setTimeout(() => window.location.reload(), 1500);
     });
 
@@ -49,9 +44,14 @@ const registerEvents = () => {
     });
 
     jitsiAPI.addListener('videoConferenceJoined', () => {
-        statusMessage.value = t('readyToTalk')
         playSound(connectedSound)
     });
+
+    jitsiAPI.addListener('participantJoined', () => {
+        statusMessage.value = t('readyToTalk')
+        playSound(connectedParticipantSound)
+    });
+
 }
 
 onBeforeUnmount(() => {
